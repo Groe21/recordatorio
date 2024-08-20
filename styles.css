@@ -33,6 +33,18 @@ body {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    pointer-events: none; /* Asegura que el contenedor no interfiera con el clic en los botones */
+}
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Aumenta el z-index para asegurarse de que los botones estén encima */
+    pointer-events: none;
 }
 
 .button-container button {
@@ -41,8 +53,16 @@ body {
     color: white;
     padding: 10px;
     cursor: pointer;
+    pointer-events: all;
+    font-size: 24px; /* Tamaño más grande para asegurar visibilidad */
+    z-index: 10;
+    margin: 0 10px; /* Agrega un margen para separar los botones de los bordes */
 }
 
 .button-container button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.button-container button:focus {
+    outline: none;
 }
